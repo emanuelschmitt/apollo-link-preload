@@ -17,7 +17,7 @@
     "fix:tslint": "tslint --fix --project .",
     "test": "run-s build test:*",
     "test:lint": "tslint --project . && prettier \"src/**/*.ts\" --list-different",
-    "test:unit": "jest",
+    "test:unit": "jest --coverage",
     "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
     "cov": "run-s build test:unit cov:html && open-cli coverage/index.html",
     "cov:send": "codecov",
@@ -27,7 +27,7 @@
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "clean": "rimraf build",
     "reset": "git clean -dfx && git reset --hard && yarn install",
-    "prepare-release": "run-s reset test cov:check doc:html version doc:publish",
+    "prepare-release": "run-s reset test doc:html version doc:publish",
     "reinstall": "yarn clean && rimraf node_modules yarn.lock && yarn install",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('apollo-link-preload must be installed with Yarn: https://yarnpkg.com/')\""
   },
