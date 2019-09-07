@@ -27,8 +27,8 @@ describe('ApolloLinkPreload', () => {
     `;
 
     try {
-      execute(preloadLink, { query })
-    } catch(err) {
+      execute(preloadLink, { query });
+    } catch (err) {
       expect(err).toBeInstanceOf(Error);
     }
   });
