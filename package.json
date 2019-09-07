@@ -1,6 +1,6 @@
 {
   "name": "apollo-link-preload",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "apollo link preloading media",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
