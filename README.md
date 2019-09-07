@@ -1,5 +1,7 @@
 # apollo-link-preload
 
+![apollo-link-preload](./media/logo.png)
+
 This package is an Apollo Link which can pre-load GraphQL query/mutation image fields. Once a field in a query is annotated with the `@preload` directive, the image will be preloaded into the browser's cache.
 
 Example of an annotated GraphQL query:
