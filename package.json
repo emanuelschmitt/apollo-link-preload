@@ -25,7 +25,7 @@
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --out build/docs",
     "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
-    "clean": "rimraf build test",
+    "clean": "rimraf build",
     "prepare-release": "run-s reset test cov:check doc:html version doc:publish",
     "reinstall": "yarn clean && rimraf node_modules yarn.lock && yarn install",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('apollo-link-preload must be installed with Yarn: https://yarnpkg.com/')\""
@@ -34,7 +34,11 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "sha.js": "^2.4.11"
+    "apollo-link": "1.2.13",
+    "apollo-utilities": "1.3.2",
+    "gql-get": "1.1.3",
+    "graphql": "^14.5.4",
+    "graphql-anywhere": "4.2.4"
   },
   "devDependencies": {
     "@bitjson/npm-scripts-info": "^1.0.0",
@@ -42,6 +46,7 @@
     "codecov": "^3.5.0",
     "cz-conventional-changelog": "^2.1.0",
     "gh-pages": "^2.0.1",
+    "graphql-tag": "^2.10.1",
     "jest": "^24.9.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
@@ -61,11 +66,14 @@
   },
   "jest": {
     "globalSetup": "./jest-config.js",
-    "moduleFileExtensions": ["ts", "js", "json"],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ],
     "testMatch": [
       "**/dist/**/*.spec.js"
     ],
-    "testEnvironment": "node",
     "collectCoverage": true,
     "coverageThreshold": {
       "global": {

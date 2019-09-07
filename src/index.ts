@@ -1,3 +1,1 @@
-export * from './lib/async';
-export * from './lib/hash';
-export * from './lib/number';
+export { default } from './lib/apollo-link-preload';
