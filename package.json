@@ -8,6 +8,10 @@
   "repository": "https://github.com/emanuelschmitt/apollo-link-preload",
   "license": "MIT",
   "keywords": [],
+  "files": [
+    "build/**/*",
+    "media/**/*"
+  ],
   "scripts": {
     "build": "run-s clean && run-p build:*",
     "build:main": "tsc -p tsconfig.json",
