@@ -1,5 +1,8 @@
 # apollo-link-preload
 
+[![CircleCI](https://circleci.com/gh/emanuelschmitt/apollo-link-preload.svg?style=svg)](https://circleci.com/gh/emanuelschmitt/apollo-link-preload)
+[![codecov](https://codecov.io/gh/emanuelschmitt/apollo-link-preload/branch/master/graph/badge.svg)](https://codecov.io/gh/emanuelschmitt/apollo-link-preload)
+
 ![apollo-link-preload](./media/logo.png)
 
 This package is an Apollo Link which can pre-load GraphQL query/mutation image fields. Once a field in a query is annotated with the `@preload` directive, the image will be preloaded into the browser's cache.
